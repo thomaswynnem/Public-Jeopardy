@@ -1,113 +1,128 @@
-🎮 Mini Jeopardy
-Mini Jeopardy is a trivia game inspired by Jeopardy! — built with React, Parse, and a custom global state engine using useReducer. It’s a fully interactive quiz app that emphasizes clean component design, modular architecture, and a smooth user experience.
+# 🎮 Mini Jeopardy
 
-👥 Built in collaboration with Yitong
+Mini Jeopardy is a trivia game inspired by *Jeopardy!* — built with the **MERN stack** (MongoDB, Express, React, Node.js), featuring a custom `useReducer` state engine, JWT authentication, and GPT‑powered quiz generation. It's designed for smooth gameplay, crisp UI, and modular backend control.
 
-🚀 Features
-🎯 Interactive 4x5 Jeopardy board
+👥 *Built in collaboration with Yitong*
 
-🧠 Instant answer feedback with visual cues
+---
 
-📈 Real-time scoring based on point values
+## 🚀 Features
 
-🔁 Full game loop: start → play → finish → restart
+* 🎯 **Interactive 5×6 Jeopardy board**
+* 🧠 **Answer feedback** with instant visual cues
+* 🔒 **JWT‑based login / signup system**
+* 🤖 **GPT‑powered quiz creation** from any prompt
+* 📈 **Live scoring** based on question values
+* 🔁 **Full loop:** Home -> Create → Play → Score → Home
+* ⚡ **Smart data caching** to reduce backend strain
 
-⚡ Smart data caching to reduce API requests
+---
 
-🧱 Tech Stack
-Layer	Tech Used
-🖥️ Frontend	React (CRA)
-🔁 Routing	React Router v6
-🎨 Styling	Styled-components
-🧠 State Engine	useReducer + Context API
-☁️ Backend DB	Parse (Back4App)
+## 🧱 Tech Stack
 
-🧩 Game Flow
-Start Screen
+| Layer                 | Tech Used                                       |
+| --------------------- | ----------------------------------------------- |
+| 🖥️ **Frontend**      | React (CRA), React Router v6, Styled‑Components  |
+| 🔁 **State Engine**   | `useReducer` + Context API                      |
+| 🧪 **Quiz Generator** | OpenAI API (GPT‑o4-mini-high)                   |
+| 🌐 **Backend**        | Express.js + Node.js                            |
+| 🛢️ **Database**      | MongoDB Atlas                                    |
+| 🔐 **Auth**           | JWT‑based authentication                        |
 
-Game Board
+---
 
-Question View
+## 🧩 Game Flow
 
-Finish Screen with score + restart option
+1. **Start Screen**
+2. **Game Board**
+3. **Question View**
+4. **Finish Screen** (score summary + restart button)
 
-All views are synced with React Router and powered by a centralized reducer for consistent, reactive state management.
+All state transitions are managed by a global reducer and synced with React Router views for a seamless user experience.
 
-💻 Development Highlights
-⚙️ Built a custom reducer engine for game state logic
+---
 
-☁️ Integrated with Parse SDK for cloud data storage
+## 💻 Development Highlights
 
-🧼 Clean architecture with decoupled data/model files
+* ⚙️ Built a **custom reducer engine** for complete game logic
+* ☁️ Integrated **MongoDB** to store quizzes, users, and scores
+* 🔐 Implemented **JWT authentication** (Sign up / Log in)
+* 🤖 Leveraged **OpenAI API** to generate quiz structures on the fly
+* 🧼 Adopted a **modular folder structure** (routes, models, controllers)
+* 🚀 **Cached question data** to avoid redundant API / DB calls
 
-⚡ Optimized backend access with local data caching
+---
 
-🤝 Collaborative project with shared frontend/backend ownership
+## 🛠️ Getting Started
 
-🛠️ Getting Started
-1. Clone the repo
-bash
-Copy
-Edit
+### 1. Clone the repo
+
+```bash
 git clone https://github.com/your-username/mini-jeopardy.git
 cd mini-jeopardy
-2. Backend Setup
-bash
-Copy
-Edit
+```
+
+### 2. Backend setup
+
+```bash
 cd backend
 npm install
-3. Create a .env file in the backend/ folder
-⚠️ You must provide your own credentials.
-Never commit sensitive info — use .env and add it to .gitignore.
+```
 
-env
-Copy
-Edit
+### 3. Create a `.env` file
+
+> ⚠️ **You must provide your own credentials**
+> Never commit `.env` — keep it listed in `.gitignore`.
+
+```env
 # .env (example)
 
-# MongoDB connection string
-MONGODB_URI=your_mongodb_connection_uri
+# MongoDB URI
+MONGODB_URI=your_mongodb_connection_string
 
-# Port the backend will run on
+# Backend port
 PORT=3001
 
-# JWT Auth config
-JWT_SECRET=your_super_secret_key
+# JWT Auth
+JWT_SECRET=your_jwt_secret
 JWT_EXPIRES_IN=1h
 
-# OpenAI API Key (for quiz generation)
+# OpenAI (for quiz generation)
 OPENAI_API_KEY=your_openai_api_key
-4. Start the backend
-bash
-Copy
-Edit
-npm run dev
-5. Frontend Setup
-bash
-Copy
-Edit
+```
+
+### 4. Start the backend server
+
+```bash
+npm start
+```
+
+### 5. Frontend setup
+
+```bash
 cd ../frontend
 npm install
 npm start
-🖼️ Screenshots (optional)
-Game Board 🧠	Question Screen ❓	Score Screen 🏆
-(Add screenshots here if available)		
+```
 
-🙋 About the Creator
-Thomas Mitchell
-GitHub – @thomaswynnem
+---
 
-A clean, scalable React project built for fun, learning, and future extensions.
 
-Let me know if you want to add:
+## 🙋 About the Creator
 
-📡 Live demo link / deploy instructions
+**Thomas Mitchell**
+GitHub – [@thomaswynnem](https://github.com/thomaswynnem)
 
-🧪 Test cases
+A **MERN‑powered trivia engine** built for clean UI, real‑time logic, and scalable backend architecture.
 
-🧩 Quiz authoring tools guide
+---
 
-👥 Contribution instructions
+## ✅ Optional Enhancements
 
-You’re ready to ship this to the world 🌍🔥
+* 📡 **Deploy** instructions (Render, Vercel, Netlify, etc.)
+* 🧪 **Test coverage** / unit tests
+* 🔧 **Admin panel** for custom quiz management
+* 🧩 **Multiplayer mode** or real‑time lobby (WebSocket ready)
+---
+
+Enjoy playing Mini Jeopardy! 🎉
